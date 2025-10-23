@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.HTML -->
+<html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cherry - 高山嚮導 | 專業名片</title>
+    <link href="./Cherry - 高山嚮導 _ 專業名片_files/css2" rel="stylesheet">
+    <style>
+        /* ====================================
+           CSS 樣式開始 (整合您前一段提供的兩組 CSS)
+           ==================================== */
+
+        /* 全域設定 */
+        :root {
+          --main-color: #4a8f6a;      /* 主色：森林綠 */
+          --accent-color: #ffb347;    /* 點綴：暖橙黃 */
+          --bg-color: #faf8f4;        /* 背景：奶油白 */
+          --text-color: #333;
+          --card-bg: #fff;
+          --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+          --radius: 16px;
+          --transition: 0.3s ease;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        /* 容器 */
+        .card-container {
+            max-width: 600px;
+            width: 95%;
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        /* 頁面頭部 (Header) */
+        header {
+            text-align: center;
+            background-color: var(--main-color); /* 統一使用森林綠 */
+            color: white;
+            padding: 30px 20px;
+            border-bottom-left-radius: var(--radius); /* 保持統一風格 */
+            border-bottom-right-radius: var(--radius);
+        }
+
+        header h1 {
+            margin: 10px 0 5px 0;
+            font-size: 2.2em;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.1em;
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        /* 頭像 */
+        .profile-photo {
+            width: 150px; /* 稍微調整大小適應名片 */
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: block;
+            border: 5px solid white; 
+            outline: 2px solid var(--accent-color); /* 使用點綴色邊框 */
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 主要內容 (Main) & 介紹區塊 (Section) */
+        main {
+            padding: 30px 40px;
+        }
+        main section {
+            text-align: left;
+        }
+
+        .section-title {
+            color: var(--main-color);
+            border-left: 6px solid var(--accent-color);
+            padding-left: 12px;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 25px;
+        }
+
+        /* 服務項目 Tags 樣式 */
+        .tags {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tags span {
+            background-color: #e8f5e9;
+            color: var(--main-color);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            border: 1px solid #c8e6c9;
+        }
+
+        /* 按鈕風格 (使用您提供的 button 樣式) */
+        .button-wrapper {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background var(--transition), transform var(--transition);
+            border: none; /* 讓它像一個乾淨的按鈕 */
+            cursor: pointer;
+            font-size: 1em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background-color: #ff9f1c;
+            transform: scale(1.05);
+        }
+        
+        /* 聯絡資訊 */
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .contact-info li strong {
+            display: inline-block;
+            width: 80px;
+            font-weight: 700;
+            color: #555;
+        }
+
+        .contact-info a {
+            color: var(--main-color); 
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #337a54;
+            text-decoration: underline;
+        }
+        
+        /* 提示訊息區塊樣式 (新增) */
+        #prompt-message {
+            background-color: #eaf3ed; /* 柔和的淺綠色 */
+            color: var(--main-color);
+            padding: 20px;
+            text-align: center;
+            font-style: italic;
+            font-weight: 500;
+            border-radius: var(--radius);
+            margin: 20px 40px; /* 置於 main 內容區的寬度 */
+            opacity: 0; /* 初始隱藏 */
+            height: 0;
+            overflow: hidden;
+            transition: opacity 0.6s ease, height 0.6s ease, padding 0.6s ease;
+        }
+        #prompt-message.show {
+            opacity: 1;
+            height: auto;
+            padding: 20px;
+        }
+
+
+        /* 頁尾 (Footer) 版權 */
+        footer {
+            background-color: #f7f7f7;
+            padding: 20px 40px;
+        }
+
+        footer > p {
+            text-align: center;
+            font-size: 0.85em;
+            color: #999;
+            margin: 10px 0 0;
+        }
+        /* ====================================
+           CSS 樣式結束
+           ==================================== */
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        
+        <header>
+            <img src="./Cherry - 高山嚮導 _ 專業名片_files/images.jfif" alt="Cherry - 專業嚮導頭像" class="profile-photo"> 
+            <h1>Cherry</h1>
+            <p>專業高山嚮導 (High Mountain Guide)</p>
+        </header>
+
+        <main>
+            <section id="introduction">
+                <h2 class="section-title">關於我：專業與熱愛</h2>
+                <p>嗨！我是 Cherry，一位熱愛臺灣山脈的專業高山嚮導。我擁有 TMLA 認證，專精於五大山脈高海拔路線規劃與安全管理。無論您是新手或老手，我都將以最專業、最溫暖的服務，帶您登頂百岳，欣賞最壯闊的山稜線。</p>
+                <p><strong>簡短自我介紹：</strong> 登百岳好手，用腳步丈量臺灣山脈之美。</p>
+            </section>
+
+            <section id="expertise">
+                <h2 class="section-title">服務項目與專長</h2>
+                <div class="tags">
+                    <span># 百岳縱走</span>
+                    <span># 高山攝影</span>
+                    <span># 無痕山林 (LNT)</span>
+                    <span># 登山安全與急救</span>
+                    <span># 私人客製化行程</span>
+                </div>
+            </section>
+            
+            <div class="button-wrapper">
+                <button class="button" id="showPromptButton">
+                    點我！感受山林的呼喚
+                </button>
+            </div>
+            
+        </main>
+        
+        <div id="prompt-message">
+            陽光灑落林間，我們在樹影下等你，一起呼吸自由的味道。
+        </div>
+
+
+        <footer>
+            <section id="contact-info" class="contact-info">
+                <h2 class="section-title">聯絡 Cherry，開啟您的山林旅程</h2>
+                <ul>
+                    <li><strong>Email：</strong><a href="mailto:123456@gmail.om">123456@gmail.om</a></li>
+                    <li><strong>電話：</strong><a href="tel:+886-9XX-XXX-XXX">請私訊索取</a></li>
+                    <li><strong>Line：</strong><a href="http://127.0.0.1:5500/index.HTML#">[ Line ID 或連結 ]</a></li>
+                </ul>
+            </section>
+            <p>© 2025 Cherry. All Rights Reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('showPromptButton');
+            const message = document.getElementById('prompt-message');
+
+            button.addEventListener('click', function() {
+                // 檢查訊息是否已經顯示
+                if (message.classList.contains('show')) {
+                    // 如果已顯示，則隱藏
+                    message.classList.remove('show');
+                } else {
+                    // 如果未顯示，則顯示
+                    message.classList.add('show');
+                }
+            });
+        });
+    </script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>
